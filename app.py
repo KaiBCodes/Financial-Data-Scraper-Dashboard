@@ -3,8 +3,11 @@ import pandas as pd
 import yfinance as yf
 import matplotlib.pyplot as plt
 
+# User input for stock ticker
+st.write("## Stock Data Dashboard")
+ticker = st.text_input("Enter a stock ticker symbol (e.g., AAPL, MSFT, TSLA):", "AAPL")
+
 # Fetch stock data
-ticker = 'AAPL'  # Example ticker symbol, you can change this to any ticker symbol
 stock_data = yf.Ticker(ticker)
 history = stock_data.history(period="1y")
 
